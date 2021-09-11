@@ -138,11 +138,11 @@ class TestLWWElementSet(TestCase):
         i = len(abc)
         for a in added:
             i = i + 1
-            lww1.add(Element(a, t))
+            lww1.add(Element(a, i))
 
         for r in removed:
             i = i + 1
-            lww1.remove(Element(r, t))
+            lww1.remove(Element(r, i))
 
         # merge original and person 1's update
         result1 = lww + lww1
@@ -157,11 +157,11 @@ class TestLWWElementSet(TestCase):
         i = len(abc) # to simulate parallel time, starting i with same as person 1's i
         for a in added:
             i = i + 1
-            lww2.add(Element(a, t))
+            lww2.add(Element(a, i))
 
         for r in removed:
             i = i + 1
-            lww2.remove(Element(r, t))
+            lww2.remove(Element(r, i))
 
         # merge original and person 2's update
         result2 = lww + lww2
